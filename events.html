@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Fragoso's Sports Bar</title>
+<meta name="description" content="Pool tournaments, karaoke nights and game day at Fragoso's Sports Bar, Hamilton.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav" id="siteNav">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="Fragoso's Sports Bar logo">
+      <span class="word">Fragoso's<small>Sports Bar · Hamilton</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#menu">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="leagues.html">Leagues</a></li>
+      <li><a href="index.html#location">Location</a></li>
+    </ul>
+    <a class="nav-cta" href="https://www.facebook.com/p/Fragosos-Sports-Bar-100063542917838/" target="_blank" rel="noopener">Find us on Facebook</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <span class="eyebrow">What's On</span>
+    <h1>Events Calendar</h1>
+    <p>Pool tournaments, karaoke nights and every big game — this is a sample lineup while we load in the real schedule.</p>
+  </section>
+
+  <section class="on-black">
+    <div class="wrap">
+      <div class="events-toolbar">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">This Month</span>
+          <h2>Sample Schedule</h2>
+        </div>
+        <span class="badge-note">Placeholder — real dates coming soon</span>
+      </div>
+
+      <div class="rack-list" style="margin-top:20px;">
+        <div class="event-row">
+          <div class="event-date"><span class="d">14</span><span class="m">Aug</span></div>
+          <div>
+            <h3>Weekly 8-Ball Tournament</h3>
+            <p>Sign-up starts early, cash prizes for the top finishers. Open to all skill levels.</p>
+          </div>
+          <span class="tag">Tournament</span>
+        </div>
+        <div class="event-row">
+          <div class="event-date"><span class="d">16</span><span class="m">Aug</span></div>
+          <div>
+            <h3>Karaoke Night</h3>
+            <p>Grab the mic and take your shot at the crowd, not just the table.</p>
+          </div>
+          <span class="tag">Karaoke</span>
+        </div>
+        <div class="event-row">
+          <div class="event-date"><span class="d">21</span><span class="m">Aug</span></div>
+          <div>
+            <h3>Game Day — Big Screen</h3>
+            <p>The match goes up on our 170" HD projector plus every TV in the room.</p>
+          </div>
+          <span class="tag">Game Day</span>
+        </div>
+        <div class="event-row">
+          <div class="event-date"><span class="d">28</span><span class="m">Aug</span></div>
+          <div>
+            <h3>9-Ball League Night</h3>
+            <p>Weekly league play — see the Leagues page for standings and how to join.</p>
+          </div>
+          <span class="tag">League</span>
+        </div>
+      </div>
+
+      <p class="menu-note" style="margin-top:30px;">This calendar will be updated with real dates and times — for the latest, check our <a href="https://www.facebook.com/p/Fragosos-Sports-Bar-100063542917838/" target="_blank" rel="noopener">Facebook page</a> or call <a href="tel:19055227267" style="color:var(--gold-bright);">(905) 522-7267</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Fragoso's Sports Bar logo">
+        <span>Fragoso's Sports Bar</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="leagues.html">Leagues</a></li>
+        <li><a href="tel:19055227267">(905) 522-7267</a></li>
+        <li><a href="https://www.facebook.com/p/Fragosos-Sports-Bar-100063542917838/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+    <p class="fine-print">293 Barton St E, Hamilton, ON — Est. neighbourhood favourite. Racks nightly.</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
+
+</body>
+</html>

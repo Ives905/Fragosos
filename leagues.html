@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leagues — Fragoso's Sports Bar</title>
+<meta name="description" content="Pool leagues at Fragoso's Sports Bar, Hamilton — 8-ball and 9-ball, weekly play, all skill levels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav" id="siteNav">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="Fragoso's Sports Bar logo">
+      <span class="word">Fragoso's<small>Sports Bar · Hamilton</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#menu">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="leagues.html">Leagues</a></li>
+      <li><a href="index.html#location">Location</a></li>
+    </ul>
+    <a class="nav-cta" href="https://www.facebook.com/p/Fragosos-Sports-Bar-100063542917838/" target="_blank" rel="noopener">Find us on Facebook</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <span class="eyebrow">Play Weekly</span>
+    <h1>Leagues</h1>
+    <p>Fragoso's runs regular pool leagues for players of every level. Details below are placeholders — the real format, nights and sign-up info are coming soon.</p>
+  </section>
+
+  <section class="on-black">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Choose Your Game</span>
+        <h2>Leagues at Fragoso's.</h2>
+        <p>Two league formats to start — more detail to come once the schedule is finalized.</p>
+      </div>
+
+      <div class="league-grid">
+        <div class="league-card">
+          <div class="ball b8"><span>8</span></div>
+          <h3>8-Ball League</h3>
+          <p>Weekly team play on the classic game. Open to new and returning players — no experience required to join a team.</p>
+          <ul class="league-meta">
+            <li><span>Night</span><span>TBD</span></li>
+            <li><span>Format</span><span>TBD</span></li>
+            <li><span>Season Length</span><span>TBD</span></li>
+            <li><span>Entry</span><span>TBD</span></li>
+          </ul>
+        </div>
+        <div class="league-card">
+          <div class="ball b2"><span>9</span></div>
+          <h3>9-Ball League</h3>
+          <p>Faster-paced rotation play for players looking for a bit more speed at the table.</p>
+          <ul class="league-meta">
+            <li><span>Night</span><span>TBD</span></li>
+            <li><span>Format</span><span>TBD</span></li>
+            <li><span>Season Length</span><span>TBD</span></li>
+            <li><span>Entry</span><span>TBD</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="league-cta">
+        <h3>Want to join a league?</h3>
+        <p>Give us a call or stop by the bar and we'll get you set up with a team.</p>
+        <a class="btn btn-primary" href="tel:19055227267">Call (905) 522-7267</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Fragoso's Sports Bar logo">
+        <span>Fragoso's Sports Bar</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="leagues.html">Leagues</a></li>
+        <li><a href="tel:19055227267">(905) 522-7267</a></li>
+        <li><a href="https://www.facebook.com/p/Fragosos-Sports-Bar-100063542917838/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+    <p class="fine-print">293 Barton St E, Hamilton, ON — Est. neighbourhood favourite. Racks nightly.</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
+
+</body>
+</html>
