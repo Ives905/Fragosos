@@ -376,3 +376,17 @@
     .event-row{grid-template-columns:60px 1fr; row-gap:8px;}
     .event-row .tag{grid-column:1/-1; justify-self:start;}
   }
+
+  /* ---------- Predator ARC promo banner ---------- */
+  .promo-banner{
+    margin:0 0 40px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 20px 40px -20px rgba(0,0,0,0.7);
+  }
+  .promo-banner img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
