@@ -1,4 +1,4 @@
-/* Fragoso's Sports Bar — styles.css — v12 */
+/* Fragoso's Sports Bar — styles.css — v13 */
   :root{
     --black:#0a0a0a;
     --black-2:#111311;
@@ -418,12 +418,6 @@
     max-width:640px;
     margin-left:auto;
     margin-right:auto;
-  }
-  .page-home .rack-row{
-    grid-template-columns:1fr;
-    justify-items:center;
-    text-align:center;
-    row-gap:10px;
   }
   .page-home .tab{
     max-width:420px;
