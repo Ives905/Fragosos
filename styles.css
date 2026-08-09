@@ -1,4 +1,4 @@
-/* Fragoso's Sports Bar — styles.css — v9 */
+/* Fragoso's Sports Bar — styles.css — v10 */
   :root{
     --black:#0a0a0a;
     --black-2:#111311;
@@ -284,11 +284,13 @@
 
   /* ---------- Sub-page header (Gallery / Events / Leagues) ---------- */
   .page-hero{
+    position:relative;
     padding:70px 28px 56px;
     text-align:center;
     background:
-      radial-gradient(circle at 50% -20%, rgba(166,28,28,0.24), transparent 55%),
-      var(--black);
+      linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.8) 55%, var(--black) 100%),
+      radial-gradient(circle at 50% -20%, rgba(166,28,28,0.2), transparent 55%),
+      url('assets/hero-billiards.jpg') center 30% / cover no-repeat;
     border-bottom:1px solid var(--line);
   }
   .page-hero .eyebrow{display:block; margin-bottom:12px;}

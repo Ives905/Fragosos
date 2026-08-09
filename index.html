@@ -162,15 +162,22 @@
         <noscript>
           <div class="rack-row">
             <div>
-              <h3>Pool Tournaments</h3>
-              <p>Weekly tournaments every Friday and Sunday for players who take their rack seriously — and for anyone who just wants to watch.</p>
+              <h3>Friday Night Tournament</h3>
+              <p>Weekly tournaments for players who take their rack seriously — and for anyone who just wants to watch.</p>
             </div>
-            <span class="tag">Fri &amp; Sun</span>
+            <span class="tag">Fridays</span>
           </div>
           <div class="rack-row">
             <div>
-              <h3>Pool League Night</h3>
-              <p>Weekly league play every Wednesday — come cheer on the regulars or ask about joining a team.</p>
+              <h3>Sunday Night Tournament</h3>
+              <p>Weekly tournaments for players who take their rack seriously — and for anyone who just wants to watch.</p>
+            </div>
+            <span class="tag">Sundays</span>
+          </div>
+          <div class="rack-row">
+            <div>
+              <h3>Wednesday Night League</h3>
+              <p>Weekly league play — come cheer on the regulars or ask about joining a team.</p>
             </div>
             <span class="tag">Wednesdays</span>
           </div>
@@ -273,9 +280,9 @@
     const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
     const events = [
-      { dow: 3, title: 'Pool League Night', desc: 'Weekly league play — see the Leagues page for how to join.', tag: 'League' },
-      { dow: 5, title: 'Weekly Tournament', desc: 'Open to all skill levels — sign-up starts early.', tag: 'Tournament' },
-      { dow: 0, title: 'Weekly Tournament', desc: 'Open to all skill levels — sign-up starts early.', tag: 'Tournament' }
+      { dow: 3, title: 'Wednesday Night League', desc: 'Weekly league play — see the Leagues page for how to join.', tag: 'League' },
+      { dow: 5, title: 'Friday Night Tournament', desc: 'Open to all skill levels — sign-up starts early.', tag: 'Tournament' },
+      { dow: 0, title: 'Sunday Night Tournament', desc: 'Open to all skill levels — sign-up starts early.', tag: 'Tournament' }
     ].map(ev => ({ ...ev, date: nextOccurrence(ev.dow) }))
      .sort((a, b) => a.date - b.date);
 
