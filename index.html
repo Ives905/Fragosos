@@ -156,23 +156,25 @@
       <div class="section-head">
         <span class="eyebrow">On the Schedule</span>
         <h2>What's happening this week.</h2>
-        <p>Weekly pool tournaments and league night — check our Facebook page for start times.</p>
+        <p>This week's tournaments and league night, straight off the calendar.</p>
       </div>
-      <div class="rack-list">
-        <div class="rack-row">
-          <div>
-            <h3>Pool Tournaments</h3>
-            <p>Weekly tournaments every Friday and Sunday for players who take their rack seriously — and for anyone who just wants to watch.</p>
+      <div class="rack-list" id="weekly-events-list">
+        <noscript>
+          <div class="rack-row">
+            <div>
+              <h3>Pool Tournaments</h3>
+              <p>Weekly tournaments every Friday and Sunday for players who take their rack seriously — and for anyone who just wants to watch.</p>
+            </div>
+            <span class="tag">Fri &amp; Sun</span>
           </div>
-          <span class="tag">Fri &amp; Sun</span>
-        </div>
-        <div class="rack-row">
-          <div>
-            <h3>Pool League Night</h3>
-            <p>Weekly league play every Wednesday — come cheer on the regulars or ask about joining a team.</p>
+          <div class="rack-row">
+            <div>
+              <h3>Pool League Night</h3>
+              <p>Weekly league play every Wednesday — come cheer on the regulars or ask about joining a team.</p>
+            </div>
+            <span class="tag">Wednesdays</span>
           </div>
-          <span class="tag">Wednesdays</span>
-        </div>
+        </noscript>
       </div>
       <p class="menu-note" style="margin-top:26px;">See the full lineup on our <a href="events.html">Events page</a>.</p>
     </div>
@@ -252,6 +254,49 @@
       navToggle.setAttribute('aria-expanded', false);
     });
   });
+
+  (function () {
+    const list = document.getElementById('weekly-events-list');
+    if (!list) return;
+
+    const cutoff = new Date(2026, 10, 30); // events run through Nov 30, 2026
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    function nextOccurrence(dow) {
+      const d = new Date(today);
+      const diff = (dow - d.getDay() + 7) % 7;
+      d.setDate(d.getDate() + diff);
+      return d;
+    }
+
+    const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    const events = [
+      { dow: 3, title: 'Pool League Night', desc: 'Weekly league play — see the Leagues page for how to join.', tag: 'League' },
+      { dow: 5, title: 'Weekly Tournament', desc: 'Open to all skill levels — sign-up starts early.', tag: 'Tournament' },
+      { dow: 0, title: 'Weekly Tournament', desc: 'Open to all skill levels — sign-up starts early.', tag: 'Tournament' }
+    ].map(ev => ({ ...ev, date: nextOccurrence(ev.dow) }))
+     .sort((a, b) => a.date - b.date);
+
+    const upcoming = events.filter(ev => ev.date <= cutoff);
+
+    if (upcoming.length === 0) {
+      list.innerHTML = '<div class="rack-row"><div><h3>Check Our Schedule</h3>' +
+        '<p>See our <a href="https://www.facebook.com/p/Fragosos-Sports-Bar-100063542917838/" target="_blank" rel="noopener">Facebook page</a> for the latest events.</p></div></div>';
+      return;
+    }
+
+    list.innerHTML = upcoming.map(ev => (
+      '<div class="rack-row">' +
+        '<div>' +
+          '<h3>' + ev.title + '</h3>' +
+          '<p>' + ev.desc + '</p>' +
+        '</div>' +
+        '<span class="tag">' + monthNames[ev.date.getMonth()] + ' ' + ev.date.getDate() + '</span>' +
+      '</div>'
+    )).join('');
+  })();
 </script>
 
 </body>
