@@ -1,4 +1,4 @@
-/* Fragoso's Sports Bar — styles.css — v15 */
+/* Fragoso's Sports Bar — styles.css — v16 */
   :root{
     --black:#0a0a0a;
     --black-2:#111311;
@@ -109,7 +109,7 @@
   .nav-brand img{height:44px; width:auto;}
   .nav-brand .word{
     font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:0.03em; color:var(--cream);
-    line-height:1.1;
+    line-height:1.1; text-align:center;
   }
   .nav-brand .word small{
     display:block; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--gold); font-weight:500;
