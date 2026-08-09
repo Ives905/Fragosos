@@ -1,4 +1,4 @@
-/* Fragoso's Sports Bar — styles.css — v11 */
+/* Fragoso's Sports Bar — styles.css — v12 */
   :root{
     --black:#0a0a0a;
     --black-2:#111311;
@@ -401,4 +401,54 @@
     aspect-ratio:4/3;
     object-fit:cover;
     display:block;
+  }
+
+  /* ---------- Homepage-only: center everything ---------- */
+  .page-home .section-head{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .page-home .about-copy{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .page-home .rack-list{
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .page-home .rack-row{
+    grid-template-columns:1fr;
+    justify-items:center;
+    text-align:center;
+    row-gap:10px;
+  }
+  .page-home .tab{
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .page-home .tab-row{
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+  .page-home .loc-grid{
+    justify-items:center;
+  }
+  .page-home .menu-note{
+    text-align:center;
+  }
+  .page-home .footer-row{
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    gap:18px;
+  }
+  .page-home .footer-links{
+    justify-content:center;
+    flex-wrap:wrap;
   }
